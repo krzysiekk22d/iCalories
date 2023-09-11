@@ -20,21 +20,21 @@ struct EditFoodView: View {
     var body: some View {
         Form {
             Section {
-                TextField("\(food.name!)", text: $name)
+                TextField("\(food.name ?? "")", text: $name)
                     .onAppear {
-                        name = food.name!
+                        name = food.name ?? ""
                         calories = food.calories
                     }
                 VStack {
                     Text("Calories: \(Int(calories))")
-                    Slider(value: $calories, in: 0...1000, step: 10)
+                    Slider(value: $calories, in: 0...1000, step: 1) // Adjust the step value
                 }
                 .padding()
                 
                 HStack {
                     Spacer()
                     Button("Submit") {
-                        DataController().editFood(food: food, name: name, calories: calories, context: managedObjectContext)
+                        DataController.shared.editFood(food: food, name: name, calories: calories, context: managedObjectContext)
                         dismiss()
                     }
                     Spacer()

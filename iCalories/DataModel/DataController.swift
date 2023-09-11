@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject {
+    static let shared = DataController()
+    
     let container = NSPersistentContainer(name: "FoodModel")
     
     init() {
@@ -26,6 +28,17 @@ class DataController: ObservableObject {
         } catch {
             print("Couldn't save.")
         }
+        
+        // uncomment code below to check the Core Data file path:
+        
+//        guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).last else {
+//            fatalError("Unable to locate application support directory.")
+//        }
+//
+//        let sqliteFilePath = url.appendingPathComponent("YourDataModelName.sqlite")
+//        print("Path to SQLite file: \(sqliteFilePath.path)")
+
+        
     }
     
     func addFood(name: String, calories: Double, context: NSManagedObjectContext) {

@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct iCaloriesApp: App {
     
-    @StateObject private var dataController = DataController()
+    @StateObject private var dataController = DataController.shared
     
     var body: some Scene {
         WindowGroup {

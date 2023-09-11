@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddFoodView: View {
     
@@ -23,25 +24,19 @@ struct AddFoodView: View {
                 VStack {
                     
                     Text("Calories: \(Int(calories))")
-                    Slider(value: $calories, in: 0...1000, step: 10)
+                    Slider(value: $calories, in: 0...1000, step: 1) // Adjust the step value
                 }
                 .padding()
                 
                 HStack {
                     Spacer()
                     Button("Submit") {
-                        DataController().addFood(name: name, calories: calories, context: managedObjectContext)
+                        DataController.shared.addFood(name: name, calories: calories, context: managedObjectContext)
                         dismiss()
                     }
                     Spacer()
                 }
             }
         }
-    }
-}
-
-struct AddFoodView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFoodView()
     }
 }

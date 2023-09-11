@@ -15,6 +15,12 @@ struct ContentView: View {
     
     @State private var showingAddView = false
     
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -28,13 +34,14 @@ struct ContentView: View {
                         } label: {
                             HStack {
                                 VStack(alignment: .leading, spacing: 6) {
-                                    Text(food.name!)
+                                    Text(food.name ?? "")
                                         .bold()
                                     
-                                    Text("\(Int(food.calories))") + Text(" calories").foregroundColor(.red)
+                                    Text("\(Int(food.calories)) calories")
+                                        .foregroundColor(.red)
                                 }
                                 Spacer()
-                                Text(calcTimeSince(date: food.date!))
+                                Text(dateFormatter.string(from: food.date ?? Date()))
                                     .foregroundColor(.gray)
                                     .italic()
                             }
@@ -61,35 +68,22 @@ struct ContentView: View {
                 AddFoodView()
             }
         }
-        
         .navigationViewStyle(.stack)
-
     }
     
     private func deleteFood(offsets: IndexSet) {
         withAnimation {
             offsets.map { food[$0] }.forEach(managedObjContext.delete)
             
-            DataController().save(context: managedObjContext)
+            DataController.shared.save(context: managedObjContext)
         }
     }
     
     private func totalCaloriesToday() -> Double {
-        
-        var caloriesToday: Double = 0
-        
-        for item in food {
-            if Calendar.current.isDateInToday(item.date!) {
-                caloriesToday += item.calories
-            }
+            let today = Calendar.current.startOfDay(for: Date())
+            
+            return food
+                .filter { Calendar.current.isDate($0.date ?? Date(), inSameDayAs: today) }
+                .reduce(0) { $0 + $1.calories }
         }
-        
-        return caloriesToday
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
