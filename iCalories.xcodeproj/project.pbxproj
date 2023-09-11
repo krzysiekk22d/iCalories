@@ -14,6 +14,7 @@
 		582FBD992AAF830D00B14246 /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 582FBD972AAF830D00B14246 /* FoodModel.xcdatamodeld */; };
 		582FBD9B2AAF840500B14246 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582FBD9A2AAF840500B14246 /* DataController.swift */; };
 		582FBD9F2AAF8B4900B14246 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582FBD9E2AAF8B4900B14246 /* AddFoodView.swift */; };
+		582FBDA12AAF972900B14246 /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582FBDA02AAF972900B14246 /* TimeFormatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		582FBD982AAF830D00B14246 /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
 		582FBD9A2AAF840500B14246 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		582FBD9E2AAF8B4900B14246 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		582FBDA02AAF972900B14246 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		582FBD872AAF81B100B14246 /* iCalories */ = {
 			isa = PBXGroup;
 			children = (
+				582FBD882AAF81B100B14246 /* iCaloriesApp.swift */,
 				582FBD9D2AAF8B2300B14246 /* Helpers */,
 				582FBD9C2AAF8B1000B14246 /* Views */,
 				582FBD962AAF82D500B14246 /* DataModel */,
@@ -95,7 +98,7 @@
 		582FBD9D2AAF8B2300B14246 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				582FBD882AAF81B100B14246 /* iCaloriesApp.swift */,
+				582FBDA02AAF972900B14246 /* TimeFormatting.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				582FBD9B2AAF840500B14246 /* DataController.swift in Sources */,
 				582FBD892AAF81B100B14246 /* iCaloriesApp.swift in Sources */,
 				582FBD992AAF830D00B14246 /* FoodModel.xcdatamodeld in Sources */,
+				582FBDA12AAF972900B14246 /* TimeFormatting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
