@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582BD6B72AAFA57000D5084F /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582BD6B62AAFA57000D5084F /* EditFoodView.swift */; };
 		582FBD892AAF81B100B14246 /* iCaloriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582FBD882AAF81B100B14246 /* iCaloriesApp.swift */; };
 		582FBD8B2AAF81B100B14246 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582FBD8A2AAF81B100B14246 /* ContentView.swift */; };
 		582FBD8D2AAF81B400B14246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582FBD8C2AAF81B400B14246 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		582BD6B62AAFA57000D5084F /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		582FBD852AAF81B100B14246 /* iCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582FBD882AAF81B100B14246 /* iCaloriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCaloriesApp.swift; sourceTree = "<group>"; };
 		582FBD8A2AAF81B100B14246 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				582FBD8A2AAF81B100B14246 /* ContentView.swift */,
 				582FBD9E2AAF8B4900B14246 /* AddFoodView.swift */,
+				582BD6B62AAFA57000D5084F /* EditFoodView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				582FBD9B2AAF840500B14246 /* DataController.swift in Sources */,
 				582FBD892AAF81B100B14246 /* iCaloriesApp.swift in Sources */,
 				582FBD992AAF830D00B14246 /* FoodModel.xcdatamodeld in Sources */,
+				582BD6B72AAFA57000D5084F /* EditFoodView.swift in Sources */,
 				582FBDA12AAF972900B14246 /* TimeFormatting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
